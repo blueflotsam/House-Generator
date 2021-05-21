@@ -1,6 +1,5 @@
 package fixtures;
 
-import java.util.Arrays;
 
 public class Room extends Fixture{
 	Exit[] exits;//array order: North, East, South, West, up, down
@@ -43,7 +42,7 @@ public class Room extends Fixture{
 
 	@Override
 	public String toString() {
-		String s="Room "+cords[0]+cords[1]+cords[2]+ " Description\n";
+		String s="Room "+cords[0]+","+cords[1]+","+cords[2]+ " Description\n";
 		s+="North: "+exits[0].toString()+"\n";
 		s+="East: "+exits[1].toString()+"\n";
 		s+="South: "+exits[2].toString()+"\n";

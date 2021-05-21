@@ -7,9 +7,9 @@ import fixtures.Room;
 public class Main {
 	static Scanner scrn=new Scanner(System.in);
 	public static void main(String []args) {
-		final int houseX=10;
-		final int houseY=10;
-		final int houseZ=10;
+		final int houseX=100;
+		final int houseY=100;
+		final int houseZ=100;
 		RoomManager map=new RoomManager(houseX,houseY,houseZ);
 		Player p=new Player();
 		p.setCurrentRoom(map.getStartingRoom());

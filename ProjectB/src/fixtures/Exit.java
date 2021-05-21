@@ -18,32 +18,35 @@ public class Exit {
 	}
 
 	public void setType(String type) {
-		this.type = type;
+		if(type.equalsIgnoreCase("empty")||type.equalsIgnoreCase("stairU")||type.equalsIgnoreCase("stairD"))
+			this.type = type;
 	}
 	public void setType() {//randomly generates a type depending on edge
 		Random rand=new Random();
 		int i=rand.nextInt(10);
-		if(edge) {
-			if(i==9)
-				this.type="door";
-			else if(i>5)
-				this.type="window";
-			else
-				this.type="wall";
-		}
-		else {
-			if(i==9) {
-				int j=rand.nextInt(2);
-				if(j==1) {
-					this.type="stairU";
-				}
+		if(type.equalsIgnoreCase("empty")) {
+			if(edge) {
+				if(i==9)
+					this.type="door";
+				else if(i>5)
+					this.type="window";
 				else
-					this.type="stairD";
+					this.type="wall";
 			}
-			else if(i>3)
-				this.type="door";
-			else
-				this.type="wall";
+			else {
+				if(i==9) {
+					int j=rand.nextInt(2);
+					if(j==1) {
+						this.type="stairU";
+					}
+					else
+						this.type="stairD";
+				}
+				else if(i>3)
+					this.type="door";
+				else
+					this.type="wall";
+			}
 		}
 	}
 

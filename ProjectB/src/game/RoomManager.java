@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Random;
+
 import fixtures.Exit;
 import fixtures.Room;
 
@@ -27,7 +29,8 @@ public class RoomManager {
 				}
 			}
 		}
-		this.setStartingRoom(rooms[0][0][0]);
+		Random rand=new Random();
+		this.setStartingRoom(rooms[rand.nextInt(rooms.length)][rand.nextInt(rooms[0].length)][rand.nextInt(rooms[0][0].length)]);
 		initExit();
 	}
 	private void initExit() {
