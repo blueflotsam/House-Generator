@@ -39,6 +39,10 @@ public class Main {
 			int[] cords=player.getCurrentRoom().getCords();
 			if(player.getCurrentRoom().getExit(command).isEdge()) {
 				System.out.println("you exit the house through the door");
+				if(player.getCurrentRoom().getCords()[2]>10)
+					System.out.println("you plummet "+player.getCurrentRoom().getCords()[2]+" floors and kick the bucket");
+				else if(player.getCurrentRoom().getCords()[2]>2)
+					System.out.println("you plummet "+player.getCurrentRoom().getCords()[2]+" floors and break a leg");
 				System.exit(0);
 			}
 			if(command.equalsIgnoreCase("North"))
@@ -52,6 +56,10 @@ public class Main {
 		}
 		else if(type.equalsIgnoreCase("window")){
 			System.out.println("you exit the house through the window");
+			if(player.getCurrentRoom().getCords()[2]>10)
+				System.out.println("you plummet "+player.getCurrentRoom().getCords()[2]+" floors and kick the bucket");
+			else if(player.getCurrentRoom().getCords()[2]>2)
+				System.out.println("you plummet "+player.getCurrentRoom().getCords()[2]+" floors and break a leg");
 			System.exit(0);
 		}
 		else if(type.equalsIgnoreCase("wall")) {

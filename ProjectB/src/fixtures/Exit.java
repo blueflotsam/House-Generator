@@ -4,6 +4,10 @@ import java.util.Random;
 
 public class Exit {
 	String type="empty";//types are door, wall, stairU, starD, window
+	final String[] materialArr= {"wood","stone","brick","concrete","marble","straw","steel","granite","tile"};
+	final String[] colorArr= {"red","blue","green","yellow","purple","pink","white","black","brown","orange"};
+	String material;
+	String color;
 	public boolean isEdge() {
 		return edge;
 	}
@@ -11,6 +15,12 @@ public class Exit {
 	public void setEdge(boolean edge) {
 		this.edge = edge;
 	}
+	public Exit() {
+		Random rand=new Random();
+		this.material=materialArr[rand.nextInt(materialArr.length)];
+		this.color=colorArr[rand.nextInt(colorArr.length)];
+	}
+	
 
 	boolean edge;//denotes if the exit leads outside(true) or inside(false)
 	public String getType() {
@@ -52,7 +62,7 @@ public class Exit {
 
 	@Override
 	public String toString() {
-		String s="A "+type;
+		String s="A "+color+" "+material+" "+type;
 		if(edge&&!type.equalsIgnoreCase("wall"))
 			s+=" leading outside";
 		if(type.equalsIgnoreCase("stairU")) {	
